@@ -1,0 +1,31 @@
+.movie-information-nav {
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+
+    margin-right: 15px;
+    svg {
+      position: relative;
+      top: 5px;
+    }
+  }
+  .search-result {
+    position: absolute;
+    width: 350px;
+    ul {
+      margin: 0;
+      list-style: none;
+      padding: 10px 15px;
+      & > li {
+        padding: 10px 0px;
+        &:first-child {
+          padding: 0px 0px 10px;
+        }
+        &:last-child {
+          padding: 10px 0px 0px;
+        }
+      }
+    }
+  }
+}

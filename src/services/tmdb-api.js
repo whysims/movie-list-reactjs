@@ -15,3 +15,12 @@ export const getMovieDetails = async id => {
     .then(res => res)
     .catch(e => e);
 };
+
+export const searchMovies = async query => {
+  return await fetch(
+    `${TMDB_API_URL}search/movie?api_key=${API_KEY}&query=${query}`
+  )
+    .then(res => res.json())
+    .then(res => res)
+    .catch(e => e);
+};

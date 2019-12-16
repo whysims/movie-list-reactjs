@@ -14,7 +14,7 @@ const RouteWithSubRoutes = route => (
 
 const AnimateRoute = () => {
   let location = useLocation();
-  console.log(location);
+
   return (
     <TransitionGroup>
       <CSSTransition key={location.key} classNames="fade" timeout={500}>

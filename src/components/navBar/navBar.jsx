@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import MovieFilterIcon from "@material-ui/icons/MovieFilter";
+import { Link } from "react-router-dom";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
+import Paper from "@material-ui/core/Paper";
 import { AppBar, Toolbar } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
+import { searchMovies } from "../../services/tmdb-api";
+import history from "../../history";
+import "./navBar.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,11 +54,30 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavBar = () => {
+  const [searchResult, setSearchResult] = useState();
   const classes = useStyles();
+
+  const showMovieDetails = id => {
+    setSearchResult(null);
+    history.push(`/movie/${id}`);
+    return;
+  };
+
+  const searchMovie = async query => {
+    if (!query.length) setSearchResult(null);
+
+    if (query.length >= 3) {
+      const result = await searchMovies(query);
+      setSearchResult(result);
+    }
+  };
+
   return (
-    <AppBar>
+    <AppBar className="movie-information-nav">
       <Toolbar>
-        Movie Information
+        <Link to="/">
+          <MovieFilterIcon /> Movie Information
+        </Link>
         <div className={classes.search}>
           <div className={classes.searchIcon}>
             <SearchIcon />
@@ -64,7 +89,21 @@ const NavBar = () => {
               input: classes.inputInput
             }}
             inputProps={{ "aria-label": "search" }}
+            onChange={event => searchMovie(event.target.value)}
           />
+          {searchResult && (
+            <Paper className="search-result">
+              <ul>
+                {searchResult.results
+                  .map(x => (
+                    <li key={x.id} onClick={() => showMovieDetails(x.id)}>
+                      {x.title}
+                    </li>
+                  ))
+                  .sort((a, b) => a.popularity < b.popularity)}
+              </ul>
+            </Paper>
+          )}
         </div>
       </Toolbar>
     </AppBar>
