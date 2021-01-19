@@ -4,6 +4,7 @@ import { NavBar } from "./components";
 import { routes } from "./routes";
 import { Router, Switch, Route, useLocation } from "react-router-dom";
 import history from "./history";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const RouteWithSubRoutes = route => (
   <Route
@@ -31,8 +32,10 @@ export default class App extends React.Component {
   render() {
     return (
       <Router history={history}>
-        <NavBar />
-        <AnimateRoute />
+        <ScrollToTop>
+          <NavBar />
+          <AnimateRoute />
+        </ScrollToTop>
       </Router>
     );
   }

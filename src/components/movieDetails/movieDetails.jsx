@@ -5,11 +5,32 @@ import Container from "@material-ui/core/Container";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import StarsOutlinedIcon from "@material-ui/icons/StarsOutlined";
 import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutlined";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { TMDB_IMG_URL } from "../../common/consts";
 import { getMovieDetails } from "../../services/tmdb-api";
 import "./movieDetails.scss";
+import { makeStyles } from "@material-ui/core";
+import { useHistory } from "react-router";
 
+const useStyles = makeStyles(({
+  backButton: {
+    zIndex: 30,
+    position: "relative",
+    display: "inline-flex",
+    flexDirection: "row",
+    alignItems: "center",
+    fontSize: "28px",
+    color: "white",
+    cursor: "pointer"
+  },
+  backText: {
+    marginLeft: 10
+  }
+}));
 const MovieDetails = props => {
+  const classes = useStyles();
+  const history = useHistory();
+
   const [movieDetails, setMovieDetails] = useState();
   const id = props.match.params.id;
 
@@ -32,8 +53,12 @@ const MovieDetails = props => {
           }}
         >
           <Container>
+           <div className={classes.backButton} onClick={() => history.push("/")}>
+            <ArrowBackIcon/>
+            <span className={classes.backText}>Back</span>
+          </div>
             <Grid container>
-              <Grid item xs={6} className="content">
+              <Grid item xs={6} className="content">   
                 <h1 className="title">{movieDetails.title}</h1>
                 <p className="overview">{movieDetails.overview}</p>
                 <div className="details">

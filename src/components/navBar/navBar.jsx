@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import Paper from "@material-ui/core/Paper";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import { searchMovies } from "../../services/tmdb-api";
 import history from "../../history";
@@ -12,7 +12,8 @@ import "./navBar.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    
   },
   search: {
     position: "relative",
@@ -39,6 +40,10 @@ const useStyles = makeStyles(theme => ({
   },
   inputRoot: {
     color: "inherit"
+  },
+  navToolBar: {
+    display: "flex",
+    justifyContent: "space-between"
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 7),
@@ -74,7 +79,8 @@ const NavBar = () => {
 
   return (
     <AppBar className="movie-information-nav">
-      <Toolbar>
+      <Container>
+      <Toolbar className={classes.navToolBar}>
         <Link to="/">
           <MovieFilterIcon /> Movie Information
         </Link>
@@ -106,6 +112,7 @@ const NavBar = () => {
           )}
         </div>
       </Toolbar>
+      </Container>
     </AppBar>
   );
 };
