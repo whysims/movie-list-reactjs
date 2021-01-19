@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/movie-list-reactjs/static/css/main.82bbcaa3.chunk.css",
-    "main.js": "/movie-list-reactjs/static/js/main.920e233b.chunk.js",
-    "main.js.map": "/movie-list-reactjs/static/js/main.920e233b.chunk.js.map",
+    "main.js": "/movie-list-reactjs/static/js/main.9cf15e06.chunk.js",
+    "main.js.map": "/movie-list-reactjs/static/js/main.9cf15e06.chunk.js.map",
     "runtime-main.js": "/movie-list-reactjs/static/js/runtime-main.fb846fe2.js",
     "runtime-main.js.map": "/movie-list-reactjs/static/js/runtime-main.fb846fe2.js.map",
     "static/js/2.3470c987.chunk.js": "/movie-list-reactjs/static/js/2.3470c987.chunk.js",
     "static/js/2.3470c987.chunk.js.map": "/movie-list-reactjs/static/js/2.3470c987.chunk.js.map",
     "index.html": "/movie-list-reactjs/index.html",
-    "precache-manifest.d6aa46f2d57e6a54f19939018ac77aa4.js": "/movie-list-reactjs/precache-manifest.d6aa46f2d57e6a54f19939018ac77aa4.js",
+    "precache-manifest.19fdaac05450255bf28e5abc35c0db23.js": "/movie-list-reactjs/precache-manifest.19fdaac05450255bf28e5abc35c0db23.js",
     "service-worker.js": "/movie-list-reactjs/service-worker.js",
     "static/css/main.82bbcaa3.chunk.css.map": "/movie-list-reactjs/static/css/main.82bbcaa3.chunk.css.map",
     "static/js/2.3470c987.chunk.js.LICENSE": "/movie-list-reactjs/static/js/2.3470c987.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fb846fe2.js",
     "static/js/2.3470c987.chunk.js",
     "static/css/main.82bbcaa3.chunk.css",
-    "static/js/main.920e233b.chunk.js"
+    "static/js/main.9cf15e06.chunk.js"
   ]
 }
