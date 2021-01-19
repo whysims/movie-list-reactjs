@@ -8,7 +8,8 @@ export const routes = [
   },
   {
     path: "/movie/:id",
-    component: MovieDetails
+    component: MovieDetails,
+    exact: true
   },
   // { path: "/search/:query", component: SearchMovies},
   {

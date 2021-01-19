@@ -17,7 +17,7 @@ const HomeLayout = () => {
   };
 
   const movieDetails = id => {
-    history.push(`/movie/${id}`);
+    history.push(`movie/${id}`);
     return;
   };
 

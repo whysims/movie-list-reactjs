@@ -2,7 +2,7 @@ import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { NavBar } from "./components";
 import { routes } from "./routes";
-import { Router, Switch, Route, useLocation } from "react-router-dom";
+import { HashRouter, Switch, Route, useLocation } from "react-router-dom";
 import history from "./history";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
@@ -31,12 +31,12 @@ const AnimateRoute = () => {
 export default class App extends React.Component {
   render() {
     return (
-      <Router history={history}>
+      <HashRouter basename="/" history={history}>
         <ScrollToTop>
           <NavBar />
           <AnimateRoute />
         </ScrollToTop>
-      </Router>
+      </HashRouter>
     );
   }
 }
