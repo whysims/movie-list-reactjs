@@ -1,14 +1,15 @@
 import React, { Fragment, useState, useEffect, Suspense } from "react";
-import history from "../../history";
 import { Loading } from "../../components";
 import { Container, Grid } from "@material-ui/core";
 import { getPopularMovies } from "../../services/tmdb-api";
+import { useHistory, withRouter } from "react-router";
 
 const MovieCard = React.lazy(() =>
   import("../../components/movieCard/movieCard")
 );
 
 const HomeLayout = () => {
+  const history = useHistory();
   const [popularMovies, setPopularMovies] = useState();
 
   const retrievePopularMovies = async () => {
@@ -17,7 +18,7 @@ const HomeLayout = () => {
   };
 
   const movieDetails = id => {
-    history.push(`movie/${id}`);
+    history.push(`/movie/${id}`)
     return;
   };
 
@@ -45,4 +46,4 @@ const HomeLayout = () => {
   );
 };
 
-export default HomeLayout;
+export default withRouter(HomeLayout);

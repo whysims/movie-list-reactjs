@@ -25,7 +25,7 @@ const useStyles = makeStyles(({
   },
   backText: {
     marginLeft: 10
-  }
+  },
 }));
 const MovieDetails = props => {
   const classes = useStyles();
@@ -57,8 +57,8 @@ const MovieDetails = props => {
             <ArrowBackIcon/>
             <span className={classes.backText}>Back</span>
           </div>
-            <Grid container>
-              <Grid item xs={6} className="content">   
+            <Grid container className="movie-details-container">
+              <Grid item xs={12} md={6} className="content">   
                 <h1 className="title">{movieDetails.title}</h1>
                 <p className="overview">{movieDetails.overview}</p>
                 <div className="details">
@@ -82,7 +82,7 @@ const MovieDetails = props => {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={6} className="poster">
+              <Grid item xs={12} md={6} className="poster">
                 <img
                   src={`${TMDB_IMG_URL}${movieDetails.poster_path}`}
                   alt={movieDetails.title}

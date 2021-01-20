@@ -1,6 +1,6 @@
 {
   "name": "movie-list-react",
-  "homepage": "http://whysims.github.io/movie-list-reactjs/",
+  "homepage": "http://whysims.github.io/movie-list-reactjs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

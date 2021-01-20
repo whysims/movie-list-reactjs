@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import MovieFilterIcon from "@material-ui/icons/MovieFilter";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import Paper from "@material-ui/core/Paper";
 import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import { searchMovies } from "../../services/tmdb-api";
-import history from "../../history";
 import "./navBar.scss";
 
 const useStyles = makeStyles(theme => ({
@@ -59,6 +58,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavBar = () => {
+  const history = useHistory();
   const [searchResult, setSearchResult] = useState();
   const classes = useStyles();
 
